@@ -1,0 +1,162 @@
+<div class="hero_area">
+  <div class="container">
+    <h2>Registration</h2>
+    <form #registerForm="ngForm" (ngSubmit)="registerUser()">
+      {{ registerForm.form.valid }}
+      <small class="text-danger">{{ msg }}</small>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter email"
+          name="email"
+          [(ngModel)]="user.emailid"
+          required
+          pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          #email="ngModel"
+          [class.is-invalid]="email.invalid && email.touched"
+        />
+        <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched"
+          >EmailId is an required field</small
+        > -->
+
+        <div *ngIf="email.errors && email.invalid && email.touched">
+          <small class="text-danger" *ngIf="email.errors?.['required']"
+            >EmailId is required field</small
+          >
+          <small class="text-danger" *ngIf="email.errors?.['pattern']"
+            >Enter Valid EmailId</small
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="username">User Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter User Name"
+          name="username"
+          [(ngModel)]="user.username"
+          required
+          #username="ngModel"
+          [class.is-invalid]="username.invalid && username.touched"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="username.valid || username.untouched"
+          >User Name is an required field</small
+        >
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Enter password"
+          name="pwd"
+          [(ngModel)]="user.password"
+          required
+          #password="ngModel"
+          [class.is-invalid]="password.invalid && password.touched"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="password.valid || password.untouched"
+          >Password is an required field</small
+        >
+      </div> -->
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input
+          id="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+          oninput="checkPasswordComplexity()"
+          type="password"
+          class="form-control"
+          placeholder="Enter password"
+          name="pwd"
+          [(ngModel)]="user.password"
+          required
+          #password="ngModel"
+          [class.is-invalid]="password.invalid && password.touched"
+          onfocus="showCheckboxes()"
+          onblur="hideCheckboxes()"
+        />
+        <div class="checkbox-popup" id="checkboxPopup">
+          <label for="lowercase" class="checkbox-label">
+            <input type="checkbox" id="lowercase" disabled /> At least one
+            lowercase letter </label
+          ><br />
+          <label for="uppercase" class="checkbox-label">
+            <input type="checkbox" id="uppercase" disabled /> At least one
+            uppercase letter </label
+          ><br />
+          <label for="number" class="checkbox-label">
+            <input type="checkbox" id="number" disabled /> At least one number </label
+          ><br />
+          <label for="special" class="checkbox-label">
+            <input type="checkbox" id="special" disabled /> At least one special
+            character </label
+          ><br />
+          <label for="min8" class="checkbox-label">
+            <input type="checkbox" id="min8" disabled /> At least 8 characters
+            long
+          </label>
+        </div>
+      </div>
+
+      <button
+        class="button-13"
+        role="button"
+        onclick="togglePasswordVisibility()"
+        class="show-password-btn"
+      >
+        Show Password
+      </button>
+
+      <div class="form-group">
+        <label for="pwd">Confirm Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Enter confirm password"
+          name="cpassword"
+          (ngModel)="(user.password)"
+          required
+          #cpassword="ngModel"
+          [class.is-invalid]="cpassword.invalid && cpassword.touched"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="
+            cpassword.value == password.value || cpassword.untouched
+          "
+          >Password don't match</small
+        >
+
+        <button
+          class="button-13"
+          role="button"
+          type="button"
+          onclick="togglePasswordVisibility()"
+          class="show-password-btn"
+        >
+          Show Password
+        </button>
+      </div>
+
+      <button
+        [disabled]="registerForm.form.invalid"
+        type="submit"
+        class="btn btn-info"
+      >
+        Register
+      </button>
+      <small (click)="gotologin()">Existing user ? Login Here</small>
+    </form>
+  </div>
+</div>

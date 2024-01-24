@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .hero_area {
+    position: relative;
+    background-color: #020230;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+
+  form {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    max-width: 100%;
+    margin-top: 200px;
+    margin-left: 40%;
+  }
+
+  
+
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  input[type="time"] {
+    /* Additional styling for the time input */
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 30px;
+    background: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17h2v-6h-2zm2-14h-2V7h2zm0-4h-2v2h2z"/></svg>') no-repeat center right 8px;
+    background-size: 18px;
+  }
+
+  h2 {
+    color: #333;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  input, select {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin: 5px 0 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  input[type="date"],
+  input[type="time"] {
+    width: 100%;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+
+
+
+
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }

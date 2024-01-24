@@ -1,0 +1,62 @@
+<!-- <form>
+  <h2>Create Meeting</h2>
+
+  <label for="title">Meeting Title:</label>
+  <input type="text" id="title" name="title" required />
+
+  <label for="date">Date:</label>
+  <input type="date" id="date" name="date" required />
+
+  <label for="time">Time:</label>
+  <input type="time" id="time" name="time" required />
+
+  <button type="button" onclick="gotojoinstream()">Create Meeting</button>
+</form> -->
+<div class="hero_area">
+  <form #meetingForm="ngForm" (ngSubmit)="gotojoinstream()">
+    <h2>Create Meeting</h2>
+
+    <label for="title">Meeting Title:</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      [(ngModel)]="meet.title"
+      required
+    />
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required [(ngModel)]="meet.date" />
+    <!-- 
+  <label for="time">Time:</label>
+  <input type="time" id="time" name="time" required /> -->
+    <!-- <label for="time">Time (24-hour format):</label>
+  <input
+    type="text"
+    id="time"
+    name="time"
+    pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"
+    required
+  /> -->
+
+    <label for="meetingTime">Meeting Time (24-hour format):</label>
+    <input
+      type="text"
+      id="meetingTime"
+      class="form-control"
+      placeholder="Enter meeting time (e.g., 14:30)"
+      [(ngModel)]="meet.time"
+      name="meetingTime"
+      pattern="^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$"
+      required
+      [class.is-invalid]="meetingForm.invalid && meetingForm.touched"
+    />
+    <!-- 
+    <button (click)="generateRoomId()">Generate Random Room ID</button>
+    <p *ngIf="randomRoomId">Random Room ID: {{ randomRoomId }}</p> -->
+
+    <button type="submit" [disabled]="meetingForm.form.invalid">
+      Create Meeting
+    </button>
+  </form>
+</div>

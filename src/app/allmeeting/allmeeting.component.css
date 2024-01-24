@@ -1,0 +1,32 @@
+/* your.component.css */
+.meeting-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-top: 60px;
+    color: white;
+
+  }
+  
+  .meeting-table th, .meeting-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .meeting-table th {
+    background-color: #020230;
+  }
+  .hero_area {
+    position: relative;
+    background-color: #020230;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    
+  }

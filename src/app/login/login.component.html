@@ -1,0 +1,120 @@
+<div class="hero_area">
+  <div class="container">
+    <h2>User Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="loginUser()">
+      {{ loginForm.form.valid }}
+      <small class="text-danger">{{ msg }}</small>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter email"
+          name="email"
+          [(ngModel)]="user.emailid"
+          required
+          pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          #email="ngModel"
+          [class.is-invalid]="email.invalid && email.touched"
+        />
+        <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched"
+        >EmailId is an required field</small
+      > -->
+
+        <div *ngIf="email.errors && email.invalid && email.touched">
+          <small class="text-danger" *ngIf="email.errors?.['required']"
+            >EmailId is required field</small
+          >
+          <small class="text-danger" *ngIf="email.errors?.['pattern']"
+            >Enter Valid EmailId</small
+          >
+        </div>
+      </div>
+      <!-- <div class="form-group">
+
+        <label for="pwd">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="pwd"
+          placeholder="Enter password"
+          name="pwd"
+          [(ngModel)]="user.password"
+          required
+          #password="ngModel"
+          [class.is-invalid]="password.invalid && password.touched"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="password.valid || password.untouched"
+          >Password is an required field</small
+        >
+      </div> -->
+
+      <form class="form-group">
+        <label for="pwd">Password:</label>
+        <div>
+          <input
+            id="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+            oninput="checkPasswordComplexity()"
+            type="password"
+            class="form-control"
+            placeholder="Enter password"
+            name="pwd"
+            [(ngModel)]="user.password"
+            required
+            #password="ngModel"
+            [class.is-invalid]="password.invalid && password.touched"
+            onfocus="showCheckboxes()"
+            onblur="hideCheckboxes()"
+          />
+          <span class="password-toggle" onclick="togglePasswordVisibility()">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="checkbox-popup" id="checkboxPopup">
+          <label for="lowercase" class="checkbox-label">
+            <input type="checkbox" id="lowercase" disabled /> At least one
+            lowercase letter </label
+          ><br />
+          <label for="uppercase" class="checkbox-label">
+            <input type="checkbox" id="uppercase" disabled /> At least one
+            uppercase letter </label
+          ><br />
+          <label for="number" class="checkbox-label">
+            <input type="checkbox" id="number" disabled /> At least one number </label
+          ><br />
+          <label for="special" class="checkbox-label">
+            <input type="checkbox" id="special" disabled /> At least one special
+            character </label
+          ><br />
+          <label for="min8" class="checkbox-label">
+            <input type="checkbox" id="min8" disabled /> At least 8 characters
+            long
+          </label>
+        </div>
+      </form>
+      <button
+        type="button"
+        onclick="togglePasswordVisibility()"
+        class="show-password-btn"
+      >
+        Show Password
+      </button>
+
+      <div class="checkbox">
+        <label><input type="checkbox" name="remember" /> Remember me</label>
+      </div>
+      <button
+        [disabled]="loginForm.form.invalid"
+        type="submit"
+        class="btn btn-info"
+      >
+        Login
+      </button>
+    </form>
+    <small (click)="gotoregistration()">New User? Register Here</small>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="hero_area">
+  <!-- your.component.html -->
+  <table class="meeting-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Time</th>
+        <!-- Add additional headers as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let meeting of savedMeetings">
+        <td>{{ meeting.title }}</td>
+        <td>{{ meeting.date }}</td>
+        <td>
+          {{ meeting.time }}
+          <button (click)="gotoVideo()">View Details</button>
+        </td>
+        <!-- Add additional cells as needed -->
+      </tr>
+    </tbody>
+  </table>
+</div>
