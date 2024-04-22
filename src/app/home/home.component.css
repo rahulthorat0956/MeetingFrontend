@@ -3,6 +3,7 @@ body {
     color: #0c0c0c;
     background-color: #f8f8f8;
     overflow-x: hidden;
+
     
   }
   
@@ -105,6 +106,8 @@ body {
   
   /*header section*/
   .hero_area {
+    padding-top: 100px; /* Adjust as needed based on your header height */
+
     position: relative;
     background-color: #020230;
     min-height: 100vh;

@@ -25,8 +25,7 @@ import { CreatemeetingComponent } from './createmeeting/createmeeting.component'
     ReactiveFormsModule
     
   ],
-  providers: [HttpClient
-  ]
+  providers: []
   
 
 })

@@ -59,4 +59,9 @@
       Create Meeting
     </button>
   </form>
+
+  <!-- Display the generated room ID -->
+  <div *ngIf="randomRoomId">
+    <p>Random Room ID: {{ randomRoomId }}</p>
+  </div>
 </div>

@@ -3,6 +3,8 @@ body {
     color: #0c0c0c;
     background-color: #f8f8f8;
     overflow-x: hidden;
+    padding-top: 100px; /* Adjust as needed based on your header height */
+
   }
   
   .layout_padding {

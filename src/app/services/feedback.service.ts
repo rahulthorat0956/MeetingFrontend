@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FeedBack } from '../models/feed-back';
 import { Observable } from 'rxjs';
@@ -12,6 +12,11 @@ export class FeedbackService {
    
   public saveFeed(feed:FeedBack):Observable<any>{
     return this._http.post<any>("http://localhost:8000/saveFeed",feed)
+  }
+
+
+  generateRandomRoomId(): Observable<string> {
+    return this._http.get<string>("http://localhost:8000/generate-room-id");
   }
 
 

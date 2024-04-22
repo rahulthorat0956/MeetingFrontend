@@ -310,6 +310,16 @@ body {
     text-align: center;
   }
   
+
+
+
+
   .header_section{
     background-color: #020230;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+
   }

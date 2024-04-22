@@ -1,8 +1,8 @@
 // const { Token } = require("@angular/compiler")
 // const { default: AgoraRTC } = require("agora-rtc-sdk-ng")
 
-const APP_ID = "5bf2a7860e194c6e8d09c9144176f6a4"
-const TOKEN = "007eJxTYJjZ/DVvwaM6Axa+y1w2RavW6l6/XlfBGS/7TnOq6LkFjsUKDKZJaUaJ5hZmBqmGlibJZqkWKQaWyZaGJiaG5mZpZokmj9NWpTYEMjIsjWxhYmSAQBCfhSE3MTOPgQEAGC4euQ=="
+const APP_ID = "a85cd245f3224dd082fedd3fbc089f22"
+const TOKEN = "007eJxTYNh/MennmcwJFfoJqRd9Njg0ZlSHOLxev+udjoZ57+0vT6wUGBItTJNTjExM04yNjExSUgwsjNJSU1KM05KSDSws04yMDjGppTUEMjLsbxVkYWSAQBCfhSE3MTOPgQEA3fggwg=="
 const CHANNEL = "main"
 
 const client = AgoraRTC.createClient({mode:'rtc' , codec:'vp8'})
